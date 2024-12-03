@@ -1,20 +1,21 @@
 <?php 
-$html = $_POST['html'];
-$css = $_POST['css'];
-$php = $_POST['php'];
-$js = $_POST['js'];
+include_once('function.php');
+$html = getPost('html');
+$css = getPost('css');
+$php = getPost('php');
+$js = getPost('js');
 
 $prefferedLanguage = "";
 for($i = 0; $i < 4; $i++){
-    $options[$html, $css, $php, $js];
-    $counter;
-    if(!empty($options[i])){
+    $options = [$html, $css, $php, $js];
+    $counter == 0;
+    if(!empty($options[$i])){
         if($counter == 0){
-            $prefferedLanguage = $options;
+            $prefferedLanguage = $options[$i];
             $counter++;
         }
         else{
-            $prefferedLanguage = $prefferedLanguage + ", " + $options;
+            $prefferedLanguage = $prefferedLanguage . ', ' . $options[$i];
             $counter++;
         }
     }
@@ -29,6 +30,7 @@ for($i = 0; $i < 4; $i++){
     <title>Document</title>
 </head>
 <body>
-    <?php echo("Votre (ou vos) language préféré : " + $prefferedLanguage); ?>
+    <?php echo("Votre (ou vos) language préféré : " . $prefferedLanguage); ?>
+    <p>canard</p>
 </body>
 </html>
