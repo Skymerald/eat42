@@ -19,8 +19,8 @@ for($i = 0; $i < 4; $i++){
             $counter++;
         }
     }
-    $counter = 0;
 }
+$counter = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +31,5 @@ for($i = 0; $i < 4; $i++){
 </head>
 <body>
     <?php echo("Votre (ou vos) language préféré : " . $prefferedLanguage); ?>
-    <p>canard</p>
 </body>
 </html>
