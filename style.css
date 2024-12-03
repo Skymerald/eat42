@@ -1,6 +1,5 @@
 :root{
     --font-color : #fff;
-    --icon-color1 : #ffffff;
 }
 .main{
     size : 62.5%;
@@ -107,8 +106,4 @@ i{
 }
 .nav-name{
     display: none;
-}
-
-i.fa-solid {
-    color: var(--icon-color1);
 }
