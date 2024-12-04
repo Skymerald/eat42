@@ -13,19 +13,27 @@ const navTitle2 = document.getElementById("title-2");
 const navTitle3 = document.getElementById("title-3");
 // stocker tout les titres de la navbar
 
-
-function transitionIn(title, icon){
-    title.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
-    icon.style = "font-size : 100%; transition : 0.5s; top : 2vh";
-}
-function transitionOut(title, icon){
-    title.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    icon.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
-}
-function transition(title, icon, btn){
-    btn.addEventListener('mouserover', transitionIn(title, icon));
-    btn.addEventListener('mouseout', transitionOut(title, icon));
-}
-transition(navTitle1, navIcon1, navBtn1);
-transition(navTitle2, navIcon2, navBtn2);
-transition(navTitle3, navIcon3, navBtn3);
+navBtn1.addEventListener('mouseover',function(){
+    navTitle1.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
+    navIcon1.style = "font-size : 100%; transition : 0.5s; top : 2vh";
+})
+navBtn1.addEventListener('mouseout',function(){
+    navTitle1.style = "transition : 0.5s; top : 5vh; opacity : 0;";
+    navIcon1.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
+})
+navBtn2.addEventListener('mouseover',function(){
+    navTitle2.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
+    navIcon2.style = "font-size : 100%; transition : 0.5s; top : 2vh";
+})
+navBtn2.addEventListener('mouseout',function(){
+    navTitle2.style = "transition : 0.5s; top : 5vh; opacity : 0;";
+    navIcon2.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
+})
+navBtn3.addEventListener('mouseover',function(){
+    navTitle3.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
+    navIcon3.style = "font-size : 100%; transition : 0.5s; top : 2vh";
+})
+navBtn3.addEventListener('mouseout',function(){
+    navTitle3.style = "transition : 0.5s; top : 5vh; opacity : 0;";
+    navIcon3.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
+})
