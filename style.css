@@ -29,6 +29,19 @@
     background-image: url("img/dark_background.jpg");
     background-size: cover;
 }
+.main-products-container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+    background-image: url("img/dark_background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 .center{
     display : flex;
     align-items: center;
@@ -93,7 +106,7 @@
     cursor: pointer;
     transition: 0.5s;
 }
-i{
+.menu-icon{
     font-size: 180%;
 }
 .nav-btn:hover > .nav-name{
@@ -112,4 +125,35 @@ i{
     display : flex;
     color : var(--font-color);
     font-family: var(--font-family);
+    width : 50vw;
+    height : 25vh;
+    margin: 1vh;
+    padding: 0.5rem;
+    border: var(--font-color) solid 0.2rem;
+    border-radius: 1rem;
+    background-color: rgba(35, 35, 35, 0.895);
+}
+.product-img{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 10vh;
+    width: 5vw;
+}
+.product-text-section{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.4rem;
+}
+.product-bottom-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+}
+.buy-icon{
+    align-self: center;
+    font-size: 150%;
+    cursor : pointer;
 }

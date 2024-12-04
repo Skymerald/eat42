@@ -7,9 +7,12 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Shop</title>
 </head>
-<body class="main-center-container">
+<body class="main-products-container">
     <?php include_once("list_of_products.php"); include_once("product.php"); ?>
     <?php 
     if(is_array($productsList) && !empty($productsList)){
