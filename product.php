@@ -7,7 +7,7 @@ class product{
     private $photo = "";
 
     /*Fonction de constructeur
-     * attribut $name, $price et $description
+     * attribue $name, $price et $description
      * pour setup les variables
      * $p_name, $p_price et $_description
      */
@@ -18,7 +18,10 @@ class product{
         $this->photo = $photo;
     }
 
-
+    /**Fonction display
+     * Creer automatiquement les div necessaire
+     * pour afficher le produits avec les bonne classes.
+     */
     public function display(){
         echo("<div class=\"product-section\">");
         echo("<img title=\"".$this->name."-photo\" class=\"product-img\" src=\"".$this->photo."\">");
@@ -31,7 +34,11 @@ class product{
         echo("</div></div></div>");
     }
 
-
+    /**Fonction create
+     * Utilise la fonction constructeur pour initialiser les
+     * attribut de l'objet en prenant uniquement un tableau
+     * associatif en argument
+     */
     function create($attributeArray){
         if(is_array($attributeArray)){
             if(!empty($attributeArray['name']) && !empty($attributeArray['price']) && !empty($attributeArray['description'])){

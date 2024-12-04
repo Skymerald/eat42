@@ -15,4 +15,9 @@ $productsList = [
     new product($saladeCesar['name'], $saladeCesar['price'], $saladeCesar['description'], $saladeCesar['photo']),
     new product($tacosCaliente['name'], $tacosCaliente['price'], $tacosCaliente['description'], $tacosCaliente['photo'])
 ];
+/**Ce fichier créer des tableau associatif avec les valeurs des
+ * produits indiqué dans l'issue 1.
+ * Après cela chaque valeur du tableau est utilisé pour creer son
+ * objet correspondant srocké dans le tableau $productsList.
+ */
 ?>
