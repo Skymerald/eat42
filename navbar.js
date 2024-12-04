@@ -14,26 +14,26 @@ const navTitle3 = document.getElementById("title-3");
 // stocker tout les titres de la navbar
 
 navBtn1.addEventListener('mouseover',function(){
-    navTitle1.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
-    navIcon1.style = "font-size : 100%; transition : 0.5s; top : 2vh";
+    navTitle1.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
+    navIcon1.style = "font-size : 100%; transition : 0.5s; top : 1.8vh";
 })
 navBtn1.addEventListener('mouseout',function(){
     navTitle1.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    navIcon1.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
+    navIcon1.style = "font-size : 180%; transition : 0.5s; top : 2.3vh";
 })
 navBtn2.addEventListener('mouseover',function(){
-    navTitle2.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
-    navIcon2.style = "font-size : 100%; transition : 0.5s; top : 2vh";
+    navTitle2.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
+    navIcon2.style = "font-size : 100%; transition : 0.5s; top : 1.8vh";
 })
 navBtn2.addEventListener('mouseout',function(){
     navTitle2.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    navIcon2.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
+    navIcon2.style = "font-size : 180%; transition : 0.5s; top : 2.3vh";
 })
 navBtn3.addEventListener('mouseover',function(){
-    navTitle3.style = "display : flex; transition : 0.5s; top : 3vh; opacity : 100;";
-    navIcon3.style = "font-size : 100%; transition : 0.5s; top : 2vh";
+    navTitle3.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
+    navIcon3.style = "font-size : 100%; transition : 0.5s; top : 1.8vh";
 })
 navBtn3.addEventListener('mouseout',function(){
     navTitle3.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    navIcon3.style = "font-size : 180%; transition : 0.5s; top : 2.6vh";
+    navIcon3.style = "font-size : 180%; transition : 0.5s; top : 2.3vh";
 })

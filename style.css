@@ -83,6 +83,7 @@
     backdrop-filter: blur(1rem);
     border: var(--font-color) solid 0.2rem;
     border-radius: 1rem;
+    overflow: hidden;
 }
 .footer-menu{
     display: flex;
@@ -111,7 +112,7 @@
     font-size: 180%;
     position: absolute;
     transition: all 0.5s;
-    top : 2.6vh
+    top : 2.3vh
 }
 .nav-name{
     position : absolute;
@@ -129,6 +130,15 @@
     border: var(--font-color) solid 0.2rem;
     border-radius: 1rem;
     background-color: rgba(35, 35, 35, 0.895);
+}
+.product-text-section{
+    width : 100%;
+}
+.product-title{
+    font-size: 2rem;
+}
+.product-description{
+    font-size: 1rem;
 }
 .product-img{
     display: flex;
