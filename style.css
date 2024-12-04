@@ -105,21 +105,18 @@
     width: 4vw;
     cursor: pointer;
     transition: 0.5s;
+    padding-top: 0vh;
 }
 .menu-icon{
     font-size: 180%;
-}
-.nav-btn:hover > .nav-name{
-    display: flex;
-}
-.nav-btn:hover > i{
-    font-size:100%;
-}
-.nav-btn:hover{
-    padding-top: 1vh;
+    position: absolute;
+    transition: all 0.5s;
+    top : 2.6vh
 }
 .nav-name{
-    display: none;
+    position : absolute;
+    top : 5vh; 
+    opacity : 0;
 }
 .product-section{
     display : flex;
