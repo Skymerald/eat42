@@ -1,11 +1,12 @@
 :root{
     --font-color : #fff;
+    --font-family : "Montserrat";
 }
 .main{
     size : 62.5%;
     border-color: rgba(0,0,0,0);
     color: var(--font-color);
-    font-family: "Montserrat";
+    font-family: var(--font-family);
     border-style: solid;
     border-radius: 5rem;
     flex-direction: column;
@@ -54,7 +55,7 @@
     border: var(--font-color) solid 0.2rem;
     border-radius: 1rem;
     color : var(--font-color);
-    font-family: "Montserrat";
+    font-family: var(--font-family);
     height: 5vh;
     width: 5vw;
     cursor: pointer;
@@ -106,4 +107,9 @@ i{
 }
 .nav-name{
     display: none;
+}
+.product-section{
+    display : flex;
+    color : var(--font-color);
+    font-family: var(--font-family);
 }
