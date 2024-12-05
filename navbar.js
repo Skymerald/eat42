@@ -15,25 +15,25 @@ const navTitle3 = document.getElementById("title-3");
 
 navBtn1.addEventListener('mouseover',function(){
     navTitle1.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
-    navIcon1.style = "font-size : 100%; transition : 0.5s; top : 1.8vh";
+    navIcon1.style = "font-size : 100%; transition : 0.5s;";
 })
 navBtn1.addEventListener('mouseout',function(){
     navTitle1.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    navIcon1.style = "font-size : 180%; transition : 0.5s; top : 2.3vh";
+    navIcon1.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })
 navBtn2.addEventListener('mouseover',function(){
     navTitle2.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
-    navIcon2.style = "font-size : 100%; transition : 0.5s; top : 1.8vh";
+    navIcon2.style = "font-size : 100%; transition : 0.5s;";
 })
 navBtn2.addEventListener('mouseout',function(){
     navTitle2.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    navIcon2.style = "font-size : 180%; transition : 0.5s; top : 2.3vh";
+    navIcon2.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })
 navBtn3.addEventListener('mouseover',function(){
     navTitle3.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
-    navIcon3.style = "font-size : 100%; transition : 0.5s; top : 1.8vh";
+    navIcon3.style = "font-size : 100%; transition : 0.5s;";
 })
 navBtn3.addEventListener('mouseout',function(){
     navTitle3.style = "transition : 0.5s; top : 5vh; opacity : 0;";
-    navIcon3.style = "font-size : 180%; transition : 0.5s; top : 2.3vh";
+    navIcon3.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })

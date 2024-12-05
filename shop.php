@@ -1,5 +1,24 @@
 <?php
 session_start();
+$bdd = new mysqli(
+    'localhost',
+    'root',
+    'root',
+    'eat42'
+);
+$requete = $bdd->prepare('SELECT * FROM produits');
+$requete->execute();
+$bddProducts = $requete->get_result();
+$bddProductsList;
+include_once("product.php");
+if ($bddProducts->num_rows > 0) { 
+    while ($row = $bddProducts->fetch_assoc()) { 
+        $bddProductsList[] = new product($row['p_name'], $row['p_price'], $row['p_description'], $row['p_photo'], $row['p_id']);
+    } 
+}
+
+$requete->close();
+$bdd->close();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,8 +34,8 @@ session_start();
 <body class="main-products-container">
     <?php include_once("list_of_products.php"); include_once("product.php"); ?>
     <?php 
-    if(is_array($productsList) && !empty($productsList)){
-        foreach($productsList as $product){
+    if(is_array($bddProductsList) && !empty($bddProductsList)){
+        foreach($bddProductsList as $product){
             $product->display();
         }
     }

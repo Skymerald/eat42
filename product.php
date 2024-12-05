@@ -17,7 +17,7 @@ class product{
         $this->description = $description;
         $this->photo = $photo;
         $this->id = $id;
-        $_SESSION["cart"][$this->id] = 0;
+
     }
 
     /**Fonction display
@@ -31,7 +31,7 @@ class product{
         echo('<h1 class="product-title">' . $this->name . '</h1>');
         echo('<h2 class="product-description">' . $this->description . '</h2>');
         echo('<div class="product-bottom-section">');
-        echo('<h3 class="product-price">' . $this->price . '</h3>');
+        echo('<h3 class="product-price">' . $this->price . '<i class="fa-solid fa-euro-sign"></i></h3>');
         //echo('<script src="cart.js"></script>');
         echo('<i class="fa-solid fa-cart-shopping buy-icon"></i>');
         echo('</div></div></div>');
