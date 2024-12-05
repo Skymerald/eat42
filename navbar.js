@@ -37,3 +37,5 @@ navBtn3.addEventListener('mouseout',function(){
     navTitle3.style = "transition : 0.5s; top : 5vh; opacity : 0;";
     navIcon3.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })
+//do the same thing just not on the same button
+//TO DO : fix the animation and make a function
