@@ -32,8 +32,7 @@ class product{
         echo('<h2 class="product-description">' . $this->description . '</h2>');
         echo('<div class="product-bottom-section">');
         echo('<h3 class="product-price">' . $this->price . '<i class="fa-solid fa-euro-sign"></i></h3>');
-        //echo('<script src="cart.js"></script>');
-        echo('<i class="fa-solid fa-cart-shopping buy-icon"></i>');
+        echo('<i class="fa-solid fa-cart-shopping buy-icon" onclick="addToCart('.$this->id.')"></i>');
         echo('</div></div></div>');
     }
 
