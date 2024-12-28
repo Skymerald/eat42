@@ -17,7 +17,6 @@
         </div>
         <div class="checkout-container">
             <div class="checkout-resume-container">
-            
             </div>
             <button class="checkout-button">BUY</button>
         </div>

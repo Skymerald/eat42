@@ -222,6 +222,12 @@
     margin-bottom: 2rem;
 
 }
+.empty-checkout-title{
+    color: var(--font-color);
+    font-family: var(--font-family);
+    display: flex;
+    font-size: 1.2rem;
+}
 .empty-cart-title{
     color : var(--font-color);
     font-family: var(--font-family);
