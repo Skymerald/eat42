@@ -1,4 +1,5 @@
 let session = sessionStorage;
+//add one of argumentId to the cart
 function addToCart(argumentId){
     let currentNumber = NaN;
     if(session.getItem(argumentId) == null){
@@ -14,6 +15,7 @@ function addToCart(argumentId){
         displayCheckout();
     }
 }
+//remove one of argumentId to the cart until it is at one
 function removeToCart(argumentId){
     let currentNumber = NaN;
     if(session.getItem(argumentId) == 1){
@@ -28,6 +30,7 @@ function removeToCart(argumentId){
         displayCheckout();
     }
 }
+//delete all the argumentId from the cart
 function deleteToCart(argumentId){
     session.removeItem(argumentId);
     document.getElementById('cart'+argumentId).remove();

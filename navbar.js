@@ -21,6 +21,7 @@ navBtn1.addEventListener('mouseout',function(){
     navTitle1.style = "transition : 0.5s; top : 5vh; opacity : 0;";
     navIcon1.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })
+// fait les animations du 1e bouton
 navBtn2.addEventListener('mouseover',function(){
     navTitle2.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
     navIcon2.style = "font-size : 100%; transition : 0.5s;";
@@ -29,6 +30,7 @@ navBtn2.addEventListener('mouseout',function(){
     navTitle2.style = "transition : 0.5s; top : 5vh; opacity : 0;";
     navIcon2.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })
+// fait les animations du 2e bouton
 navBtn3.addEventListener('mouseover',function(){
     navTitle3.style = "display : flex; transition : 0.5s; top : 2.5vh; opacity : 100;";
     navIcon3.style = "font-size : 100%; transition : 0.5s;";
@@ -37,3 +39,4 @@ navBtn3.addEventListener('mouseout',function(){
     navTitle3.style = "transition : 0.5s; top : 5vh; opacity : 0;";
     navIcon3.style = "font-size : 180%; transition : 0.5s; justify-self: center; align-self: center;";
 })
+// fait les animations du 3e bouton

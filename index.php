@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <div class="main center">
         <h1>Titre</h1 class="center">
-        <h2>Formulaire</h2 class="center">
+        <h2>Form</h2 class="center">
         <form method="POST" action="process.php" >
             <table>
                 <tr>
