@@ -32,7 +32,6 @@ $bdd->close();
     <title>Shop</title>
 </head>
 <body class="main-products-container">
-    <?php include_once("list_of_products.php"); include_once("product.php"); ?>
     <?php 
     if(is_array($bddProductsList) && !empty($bddProductsList)){
         foreach($bddProductsList as $product){
@@ -40,6 +39,7 @@ $bdd->close();
         }
     }
     ?>
+    <script src="cart.js"></script>
     <footer class="footer-menu" >
         <?php include_once("navbar.html"); ?>
     </footer>

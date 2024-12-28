@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<body class="main-center-container">
+<link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body class="main-center-container">
     <div class="main center">
         <h1>Titre</h1 class="center">
-        <h2>Formulaire</h2 class="center">
+        <h2>Form</h2 class="center">
         <form method="POST" action="process.php" >
             <table>
                 <tr>
