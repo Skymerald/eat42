@@ -254,6 +254,15 @@
 .cart-number{
     margin : 1rem;
 }
+.cart-number-minus{
+    cursor: pointer;
+}
+.cart-number-plus{
+    cursor:pointer;
+}
+.cart-delete-btn{
+    cursor: pointer;
+}
 .checkout-section{
     display: flex;
     align-items: center;

@@ -95,17 +95,29 @@ function createCartElement(key, value) {
     container.id='cart'+key;
     cartName.classList.add('cart-name');
     cartNumberContainer.classList.add('cart-number-container');
-    cartNumberMinusBtn.classList.add('fa-solid', 'fa-circle-minus');
-    cartNumberPlusBtn.classList.add('fa-solid', 'fa-circle-plus');
+    cartNumberMinusBtn.classList.add('fa-solid', 'fa-circle-minus', 'cart-number-minus');
+    cartNumberPlusBtn.classList.add('fa-solid', 'fa-circle-plus', 'cart-number-plus');
     cartNumber.classList.add('cart-number');
     cartPrice.classList.add('cart-price');
     cartTotalPrice.classList.add('cart-total-price');
     cartDeleteBtn.classList.add('fa-solid', 'fa-trash-can', 'cart-delete-btn');
 
-    cartName.innerText = key;
+    fetchName(key).then(data => {
+        cartName.innerText = extractDbName(data);
+    });
     cartNumber.innerText = value;
-    cartPrice.innerText = 50;
-    cartTotalPrice.innerText = 50 * value;
+    fetchPrice(key).then(data => {
+        cartPrice.innerText = extractDbPrice(data);
+        cartTotalPrice.innerText = extractDbPrice(data) * value;
+
+        cartPrice.appendChild(euroIcon.cloneNode(true)); // Clone the icon for separate use
+        container.appendChild(cartPrice);
+    
+        cartTotalPrice.appendChild(euroIcon.cloneNode(true));
+        container.appendChild(cartTotalPrice);
+
+        container.appendChild(cartDeleteBtn);
+    });
 
     container.appendChild(cartName);
     container.appendChild(cartNumberContainer);
@@ -113,17 +125,13 @@ function createCartElement(key, value) {
     cartNumberPlusBtn.onclick = function(){addToCart(key);};
     cartNumberMinusBtn.onclick = function(){removeToCart(key);};
 
+    if(value == 1){
+        cartNumberMinusBtn.style = "cursor : not-allowed;"
+    }
+
     cartNumberContainer.appendChild(cartNumberMinusBtn);
     cartNumberContainer.appendChild(cartNumber);
     cartNumberContainer.appendChild(cartNumberPlusBtn);
-
-    cartPrice.appendChild(euroIcon.cloneNode(true)); // Clone the icon for separate use
-    container.appendChild(cartPrice);
-    
-    cartTotalPrice.appendChild(euroIcon.cloneNode(true));
-    container.appendChild(cartTotalPrice);
-
-    container.appendChild(cartDeleteBtn);
 
     cartDeleteBtn.onclick = function(){deleteToCart(key);};
 
@@ -160,10 +168,13 @@ function displayCheckout(){
     else{
         let totalPrice = 0;
         keys.forEach(key => {
-            displayCheckoutProduct(key, checkout[key]);
-            totalPrice += (50 * checkout[key]);
+            displayCheckoutProduct();
+            fetchPrice(key).then(data => {
+                totalPrice += extractDbPrice(data) * checkout[key];
+                console.log(totalPrice);
+                displayCheckoutTotal(totalPrice);
+            })
         });
-        displayCheckoutTotal(totalPrice);
     }
 }
 function displayCheckoutProduct(){
@@ -193,37 +204,108 @@ function createCheckoutElement(key, value){
     cartNumber.classList.add('checkout-number');
     cartPrice.classList.add('checkout-price');
 
-    cartName.innerText = key;
+    fetchName(key).then(data => {
+        cartName.innerText = extractDbName(data);
+    });
     cartNumber.innerText = 'x'+value;
-    cartPrice.innerText = 50 * value;
+    fetchPrice(key).then(data => {
+        cartPrice.innerText = extractDbPrice(data) * value;
 
-    container.appendChild(cartName);
-    container.appendChild(cartNumber);
+        container.appendChild(cartName);
+        container.appendChild(cartNumber);
     
-    cartPrice.appendChild(euroIcon);
-    container.appendChild(cartPrice);
+        cartPrice.appendChild(euroIcon);
+        container.appendChild(cartPrice);
+    });
 
     return container;
 }
 function displayCheckoutTotal(price){
-    let euroIcon = document.createElement('i');
-    euroIcon.classList.add('fa-solid', 'fa-euro-sign');
+    if(document.querySelector(".total-checkout-section")){
+        let euroIcon = document.createElement('i');
+        euroIcon.classList.add('fa-solid', 'fa-euro-sign');
+        
+        let priceTitle = document.querySelector(".total-checkout-price");
 
-    let checkoutContainer = document.querySelector('.checkout-resume-container');
+        document.querySelector(".total-checkout-price").innerText = price;
 
-    let container = document.createElement('div');
-    let priceTitle = document.createElement('h1');
+        priceTitle.appendChild(euroIcon);
+    }
+    else{
+        let euroIcon = document.createElement('i');
+        euroIcon.classList.add('fa-solid', 'fa-euro-sign');
 
-    container.classList.add('total-checkout-section');
-    priceTitle.classList.add('total-checkout-price');
+        let checkoutContainer = document.querySelector('.checkout-resume-container');
 
-    priceTitle.innerText = price;
+        let container = document.createElement('div');
+        let priceTitle = document.createElement('h1');
 
-    priceTitle.appendChild(euroIcon);
+        container.classList.add('total-checkout-section');
+        priceTitle.classList.add('total-checkout-price');
 
-    container.appendChild(priceTitle);
+        priceTitle.innerText = price;
 
-    checkoutContainer.appendChild(container);
+        priceTitle.appendChild(euroIcon);
+
+        container.appendChild(priceTitle);
+
+        checkoutContainer.appendChild(container);
+    }
+}
+function fetchName(id) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `nameRequest.php?id=${id}`, true);
+
+        xhr.onload = function() {
+            if (this.status === 200) {
+                resolve(JSON.parse(this.responseText));
+            } else {
+                reject("Error: " + this.status);
+            }
+        };
+
+        xhr.onerror = function() {
+            reject("Request error...");
+        };
+
+        xhr.send();
+    });
+}
+function extractDbName(data){
+    let name;
+    data.forEach(item => {
+        name = item.p_name;
+    });
+    return name;
+}
+function fetchPrice(id) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `priceRequest.php?id=${id}`, true);
+
+        xhr.onload = function() {
+            if (this.status === 200) {
+                resolve(JSON.parse(this.responseText));
+            } else {
+                reject("Error: " + this.status);
+            }
+        };
+
+        xhr.onerror = function() {
+            reject("Request error...");
+        };
+
+        xhr.send();
+    });
+}
+
+function extractDbPrice(data){
+    let p_price;
+    data.forEach(item => {
+        p_price = item.p_price;
+    });
+    return p_price;
 }
 if(window.location.pathname.includes("cart")){
     window.addEventListener("load", displayCart());
